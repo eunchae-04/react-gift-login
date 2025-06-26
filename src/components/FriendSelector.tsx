@@ -16,16 +16,19 @@ const container = (theme: ThemeType) => css`
   cursor: pointer;
 `;
 
+const iconStyle = css`
+  margin-right: 8px;
+`;
+
 const FriendSelector = () => {
   const theme = useTheme();
 
   return (
     <button css={container(theme)}>
-      <FaPlus style={{ marginRight: '8px' }} />
+      <FaPlus css={iconStyle} />
       선물할 친구를 선택해 주세요.
     </button>
   );
 };
 
 export default FriendSelector;
-
