@@ -25,13 +25,14 @@ const titleStyle = (theme: ThemeType) => css`
 
 const gridStyle = css`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 16px;
   row-gap: 24px;
 `;
 
 const itemStyle = css`
-  min-width: 104px;
+  width: 100%;
+  max-width: 104px;
   flex-shrink: 0;
   text-align: center;
   cursor: pointer;
