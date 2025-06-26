@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css, useTheme } from '@emotion/react';
+import { css, useTheme, type Theme as ThemeType } from '@emotion/react';
 import { useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import { MdFace2, MdFace, MdFace6 } from "react-icons/md";
@@ -82,7 +82,7 @@ const tabRow = css`
   margin-bottom: 16px;
 `;
 
-const tabButton = (theme: any, active: boolean) => css`
+const tabButton = (theme: ThemeType, active: boolean) => css`
   width: 100%;
   padding: 10px 0;
   font-size: ${theme.typography.body2Regular.fontSize};
@@ -111,7 +111,7 @@ const subTabRow = css`
   margin-bottom: 24px;
 `;
 
-const subTabButton = (theme: any, active: boolean) => css`
+const subTabButton = (theme: ThemeType, active: boolean) => css`
   background: ${active ? '#fff' : 'transparent'};
   border: none;
   font-size: ${theme.typography.body1Bold.fontSize};
@@ -137,7 +137,7 @@ const card = css`
   text-align: center;
 `;
 
-const rankBadge = (theme: any, rank: number) => css`
+const rankBadge = (theme: ThemeType, rank: number) => css`
   position: absolute;
   top: 8px;
   left: 8px;
@@ -178,7 +178,7 @@ const price = css`
   margin-top: 4px;
 `;
 
-const moreButton = (theme: any) => css`
+const moreButton = (theme: ThemeType) => css`
   margin-top: 24px;
   display: block;
   padding: 10px 20px;

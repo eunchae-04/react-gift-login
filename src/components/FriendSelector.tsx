@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import { css, useTheme } from '@emotion/react';
+import { css, useTheme, type Theme as ThemeType } from '@emotion/react';
 import { FaPlus } from 'react-icons/fa';
 
-const container = (theme: any) => css`
+const container = (theme: ThemeType) => css`
   display: flex;
   align-items: center;
   padding: 12px 16px;
