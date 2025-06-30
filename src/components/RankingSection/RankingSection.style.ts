@@ -38,14 +38,17 @@ export const moreButton = (theme: ThemeType) => css`
   border: none;
   font-weight: bold;
   cursor: pointer;
-  width: 100%;
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const tabButton = (theme: ThemeType, active: boolean) => css`
   width: 75px;
   padding: ${theme.spacing[2]} 0;
-  font-size: ${theme.typography.body2Regular.fontSize};
-  font-weight: ${theme.typography.body2Bold.fontWeight};
+  font-size: ${theme.typography.label1Regular.fontSize};
+  font-weight: ${theme.typography.label1Regular.fontWeight};
   color: ${active ? theme.color.blue.blue700 : theme.color.gray.gray700};
   background-color: ${active ? theme.color.blue.blue100 : theme.color.gray.gray100};
   border: none;
@@ -62,8 +65,8 @@ export const tabButton = (theme: ThemeType, active: boolean) => css`
 export const subTabButton = (theme: ThemeType, active: boolean) => css`
   background: ${active ? '#fff' : 'transparent'};
   border: none;
-  font-size: ${theme.typography.body1Bold.fontSize};
-  font-weight: ${theme.typography.body1Bold.fontWeight};
+  font-size: ${theme.typography.label1Regular.fontSize};
+  font-weight: ${theme.typography.label1Regular.fontWeight};
   color: ${active ? theme.color.blue.blue700 : theme.color.gray.gray600};
   border-radius: ${theme.spacing[3]};
   padding: ${theme.spacing[2]} 0;
