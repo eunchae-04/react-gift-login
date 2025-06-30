@@ -1,15 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme, type Theme as ThemeType } from '@emotion/react';
 import { FaPlus } from 'react-icons/fa';
+import theme from '../styles/theme';
 
 const container = (theme: ThemeType) => css`
   display: flex;
   align-items: center;
-  padding: 12px 16px;
+  padding: ${theme.spacing[3]} ${theme.spacing[4]};
   width: 100%;
   background-color: ${theme.color.gray.gray100};
   border: 1px solid ${theme.color.semantic.borderDefault};
-  border-radius: 8px;
+  border-radius: ${theme.spacing[2]};
   color: ${theme.color.semantic.textDefault};
   font-size: ${theme.typography.body1Regular.fontSize};
   font-weight: ${theme.typography.body1Regular.fontWeight};
@@ -17,7 +18,7 @@ const container = (theme: ThemeType) => css`
 `;
 
 const iconStyle = css`
-  margin-right: 8px;
+  margin-right: ${theme.spacing[2]}};
 `;
 
 const FriendSelector = () => {

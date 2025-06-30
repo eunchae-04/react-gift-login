@@ -1,20 +1,21 @@
 /** @jsxImportSource @emotion/react */
 import { css, type Theme as ThemeType } from '@emotion/react';
+import theme from '../../styles/theme';
 
 export const sectionWrapper = css`
-  margin-top: 40px;
+  margin-top: ${theme.spacing[10]};
 `;
 
 export const tabRow = css`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: ${theme.spacing[2]};
+  margin-bottom: ${theme.spacing[4]};
 `;
 
 export const tabButton = (theme: ThemeType, active: boolean) => css`
   width: 100%;
-  padding: 10px 0;
+  padding: ${theme.spacing[3]} 0;
   font-size: ${theme.typography.body2Regular.fontSize};
   font-weight: ${theme.typography.body2Bold.fontWeight};
   color: ${active ? theme.color.blue.blue700 : theme.color.gray.gray700};
@@ -25,7 +26,7 @@ export const tabButton = (theme: ThemeType, active: boolean) => css`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: ${theme.spacing[2]}; 
 `;
 
 export const iconStyle = css`
@@ -37,8 +38,8 @@ export const subTabRow = css`
   grid-template-columns: repeat(3, 1fr);
   background-color: #f7f8f9;
   border-radius: 12px;
-  padding: 6px;
-  margin-bottom: 24px;
+  padding: ${theme.spacing[2]};
+  margin-bottom: ${theme.spacing[6]};
 `;
 
 export const subTabButton = (theme: ThemeType, active: boolean) => css`
@@ -48,7 +49,7 @@ export const subTabButton = (theme: ThemeType, active: boolean) => css`
   font-weight: ${theme.typography.body1Bold.fontWeight};
   color: ${active ? theme.color.blue.blue700 : theme.color.gray.gray600};
   border-radius: 10px;
-  padding: 8px 0;
+  padding: ${theme.spacing[2]} 0;
   cursor: pointer;
   width: 100%;
 `;
@@ -56,7 +57,7 @@ export const subTabButton = (theme: ThemeType, active: boolean) => css`
 export const cardGrid = css`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: ${theme.spacing[4]};
 `;
 
 export const card = css`
@@ -69,16 +70,13 @@ export const card = css`
 
 export const rankBadge = (theme: ThemeType, rank: number) => css`
   position: absolute;
-  top: 8px;
-  left: 8px;
-  background-color:
-    ${rank <= 3
-      ? theme.color.red.red700
-      : theme.color.gray.gray600};
+  top: ${theme.spacing[2]};
+  left: ${theme.spacing[2]};
+  background-color: ${rank <= 3 ? theme.color.red.red700 : theme.color.gray.gray600};
   color: #fff;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: ${theme.spacing[6]};
+  height: ${theme.spacing[6]};
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -92,26 +90,26 @@ export const image = css`
 
 export const brand = css`
   font-size: 12px;
-  margin-top: 8px;
+  margin-top: ${theme.spacing[2]};
   color: #666;
 `;
 
 export const name = css`
   font-size: 14px;
   font-weight: 500;
-  margin-top: 4px;
+  margin-top: ${theme.spacing[1]};
 `;
 
 export const price = css`
   font-size: 14px;
   font-weight: 700;
-  margin-top: 4px;
+  margin-top: ${theme.spacing[1]};
 `;
 
 export const moreButton = (theme: ThemeType) => css`
-  margin-top: 24px;
+  margin-top: ${theme.spacing[6]};
   display: block;
-  padding: 10px 20px;
+  padding: ${theme.spacing[3]} ${theme.spacing[5]};
   background: ${theme.color.gray.gray100};
   color: ${theme.color.gray.gray900};
   border-radius: 8px;

@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme, type Theme as ThemeType } from '@emotion/react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import theme from '../styles/theme';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -17,8 +18,20 @@ const LoginPage = () => {
     <div css={backgroundStyle(theme)}>
       <div css={cardStyle(theme)}>
         <h1 css={logoStyle}>kakao</h1>
-        <input type="text" placeholder="이메일" css={inputStyle(theme)} />
-        <input type="password" placeholder="비밀번호" css={inputStyle(theme)} />
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="이메일"
+          css={inputStyle(theme)}
+        />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="비밀번호"
+          css={inputStyle(theme)}
+        />
         <button onClick={handleLogin} css={loginButtonStyle(theme)}>
           로그인
         </button>
@@ -36,46 +49,50 @@ const backgroundStyle = (theme: ThemeType) => css`
 
 const cardStyle = (theme: ThemeType) => css`
   max-width: 450px;
-  margin: 48px auto;
+  margin: ${theme.spacing[12]} auto;
   background-color: ${theme.color.semantic.backgroundDefault};
-  padding: 180px 24px;
+  padding: 180px ${theme.spacing[6]};
   display: flex;
   flex-direction: column;
   gap: 16px;
-  border-radius: 8px;
+  border-radius: ${theme.spacing[2]};
   box-sizing: border-box;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
 `;
 
 const logoStyle = css`
-  font-size: 28px;
+  font-size: ${theme.spacing[8]};
   font-weight: bold;
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom:  ${theme.spacing[6]};
 `;
 
 const inputStyle = (theme: ThemeType) => css`
-  padding: 12px 16px;
+  padding: ${theme.spacing[3]} ${theme.spacing[4]};
   border: none;
   border-bottom: 1px solid ${theme.color.gray.gray400};
   background-color: transparent;
-  font-size: 14px;
+  font-size: ${theme.typography.body2Regular.fontSize};
+  color: ${theme.color.gray.gray900};
+  caret-color: ${theme.color.gray.gray900};
+
   &::placeholder {
     color: ${theme.color.semantic.textPlaceholder};
   }
   &:focus {
     outline: none;
     border-bottom: 1px solid ${theme.color.gray.gray600};
+    box-shadow: 0 1px 0 0 ${theme.color.gray.gray600};
   }
 `;
 
 const loginButtonStyle = (theme: ThemeType) => css`
-  margin-top: 16px;
-  padding: 12px;
+  margin-top: ${theme.spacing[4]};
+  padding: ${theme.spacing[3]};
   background-color: ${theme.color.yellow.yellow600};
   border: none;
-  border-radius: 6px;
+  border-radius: ${theme.spacing[2]};
   font-weight: 500;
-  font-size: 16px;
+  font-size: ${theme.typography.body1Bold.fontSize};
   cursor: pointer;
 `;

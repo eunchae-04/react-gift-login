@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css, type Theme as ThemeType } from '@emotion/react';
+import theme from '../../styles/theme';
 
 type CategoryItemProps = {
   themeId: number;
@@ -17,9 +18,9 @@ const itemStyle = css`
 `;
 
 const imageStyle = css`
-  border-radius: 12px;
+  border-radius: ${theme.spacing[3]};
   object-fit: cover;
-  margin-bottom: 8px;
+  margin-bottom: ${theme.spacing[2]};
 `;
 
 const nameStyle = (theme: ThemeType) => css`

@@ -2,12 +2,13 @@
 import { css } from '@emotion/react';
 import { FiArrowLeft, FiUser } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
+import theme from '../styles/theme';
 
 const NavBar = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
-    window.history.back();
+    navigate(-1);
   };
 
   const handleLoginClick = () => {
@@ -37,13 +38,13 @@ export default NavBar;
 
 const navStyle = css`
   max-width: 720px;
-  height: 56px;
+  height: ${theme.spacing[14]};
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 ${theme.spacing[4]};
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid ${theme.color.gray.gray200};
   background-color: #fff;
 `;
 
@@ -60,8 +61,8 @@ const iconButtonStyle = css`
 const titleButtonStyle = css`
   background: none;
   border: none;
-  font-size: 18px;
-  font-weight: 600;
-  color: #000;
+  font-size: ${theme.typography.title2Bold.fontSize};
+  font-weight: ${theme.typography.title2Bold.fontWeight};
+  color: ${theme.color.gray.gray1000};
   cursor: pointer;
 `;

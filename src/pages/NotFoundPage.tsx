@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
-  const theme = useTheme() as ThemeType;
+   const theme = useTheme();
 
   const handleGoHome = () => {
     navigate('/');
@@ -29,17 +29,17 @@ const container = (theme: ThemeType) => css`
   height: 100vh;
   text-align: center;
   color: ${theme.color.gray.gray800};
-  gap: 8px;
+  gap: ${theme.spacing[2]};
 `;
 
 const buttonStyle = (theme: ThemeType) => css`
-  margin-top: 20px;
-  padding: 10px 20px;
+  margin-top: ${theme.spacing[5]};
+  padding: ${theme.spacing[3]} ${theme.spacing[5]};
   background-color: ${theme.color.yellow.yellow600};
   color: #000;
   border: none;
-  border-radius: 6px;
+  border-radius:${theme.spacing[2]};
   font-weight: bold;
-  font-size: 16px;
+  font-size: ${theme.spacing[4]};
   cursor: pointer;
 `;

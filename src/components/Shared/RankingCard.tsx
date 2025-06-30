@@ -12,19 +12,19 @@ type RankingCardProps = {
 
 const RankingCard = ({ rank, imageURL, brand, name, price, theme }: RankingCardProps) => {
   return (
-    <div css={card}>
+    <div css={card(theme)}>
       <div css={rankBadge(theme, rank)}>{rank}</div>
-      <img src={imageURL} alt={name} css={image} />
-      <p css={brandStyle}>{brand}</p>
-      <p css={nameStyle}>{name}</p>
-      <p css={priceStyle}>{price.toLocaleString()}원</p>
+      <img src={imageURL} alt={name} css={image(theme)} />
+      <p css={brandStyle(theme)}>{brand}</p>
+      <p css={nameStyle(theme)}>{name}</p>
+      <p css={priceStyle(theme)}>{price.toLocaleString()}원</p>
     </div>
   );
 };
 
-const card = css`
+const card = (theme: ThemeType) => css`
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: ${theme.spacing[2]};
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -32,40 +32,40 @@ const card = css`
 
 const rankBadge = (theme: ThemeType, rank: number) => css`
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: ${theme.spacing[2]};
+  left: ${theme.spacing[2]};
   background-color: ${rank <= 3 ? theme.color.red.red700 : theme.color.gray.gray600};
   color: #fff;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: ${theme.spacing[6]};
+  height: ${theme.spacing[6]};
   font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const image = css`
+const image = (theme: ThemeType) => css`
   width: 100%;
-  border-radius: 8px;
+  border-radius: ${theme.spacing[2]};
 `;
 
-const brandStyle = css`
+const brandStyle = (theme: ThemeType) => css`
   font-size: 12px;
-  margin-top: 8px;
+  margin-top: ${theme.spacing[2]};
   color: #666;
 `;
 
-const nameStyle = css`
+const nameStyle = (theme: ThemeType) => css`
   font-size: 14px;
   font-weight: 500;
-  margin-top: 4px;
+  margin-top: ${theme.spacing[1]};
 `;
 
-const priceStyle = css`
+const priceStyle = (theme: ThemeType) => css`
   font-size: 14px;
   font-weight: 700;
-  margin-top: 4px;
+  margin-top: ${theme.spacing[1]};
 `;
 
 export default RankingCard;

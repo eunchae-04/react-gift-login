@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css, type Theme as ThemeType } from '@emotion/react';
+import theme from '../../styles/theme';
 
 type TabButtonProps = {
   active: boolean;
@@ -23,18 +24,18 @@ const TabButton = ({ active, theme, onClick, icon, label, isSubTab = false }: Ta
 
 const tabButton = (theme: ThemeType, active: boolean) => css`
   width: 100%;
-  padding: 10px 0;
+  padding: ${theme.spacing[3]} 0;
   font-size: ${theme.typography.body2Regular.fontSize};
   font-weight: ${theme.typography.body2Bold.fontWeight};
   color: ${active ? theme.color.blue.blue700 : theme.color.gray.gray700};
   background-color: ${active ? theme.color.blue.blue100 : theme.color.gray.gray100};
   border: none;
-  border-radius: 20px;
+  border-radius: ${theme.spacing[5]};
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: ${theme.spacing[2]};
 `;
 
 const subTabButton = (theme: ThemeType, active: boolean) => css`
@@ -43,14 +44,14 @@ const subTabButton = (theme: ThemeType, active: boolean) => css`
   font-size: ${theme.typography.body1Bold.fontSize};
   font-weight: ${theme.typography.body1Bold.fontWeight};
   color: ${active ? theme.color.blue.blue700 : theme.color.gray.gray600};
-  border-radius: 10px;
-  padding: 8px 0;
+  border-radius: ${theme.spacing[3]};
+  padding: ${theme.spacing[2]} 0;
   cursor: pointer;
   width: 100%;
 `;
 
 const iconStyle = css`
-  font-size: 14px;
+  font-size: ${theme.spacing[4]};
 `;
 
 export default TabButton;

@@ -55,7 +55,7 @@ const RankingSection = () => {
 
   return (
     <section css={sectionWrapper}>
-      <h2 css={css`margin-bottom: 12px;`}>실시간 급상승 선물랭킹</h2>
+      <h2 css={css`margin-bottom: ${theme.spacing[3]};`}>실시간 급상승 선물랭킹</h2>
 
       <div css={tabRow}>
         {genderTabs.map(({ label, icon }) => (

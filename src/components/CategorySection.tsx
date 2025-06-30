@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme, type Theme as ThemeType } from '@emotion/react';
 import CategoryItem from './Shared/CategoryItem'; 
+import theme from '../styles/theme';
 
 type Category = {
   themeId: number;
@@ -13,11 +14,11 @@ type Props = {
 };
 
 const sectionStyle = css`
-  padding: 16px;
+  padding: ${theme.spacing[4]};
 `;
 
 const titleStyle = (theme: ThemeType) => css`
-  margin-bottom: 12px;
+  margin-bottom: ${theme.spacing[3]};
   color: ${theme.color.semantic.textDefault};
   font-size: ${theme.typography.title1Bold.fontSize};
   font-weight: ${theme.typography.title1Bold.fontWeight};
@@ -27,8 +28,8 @@ const titleStyle = (theme: ThemeType) => css`
 const gridStyle = css`
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 16px;
-  row-gap: 24px;
+  gap: ${theme.spacing[4]};
+  row-gap: ${theme.spacing[6]};
 `;
 
 const CategorySection = ({ categories }: Props) => {

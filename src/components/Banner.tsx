@@ -1,11 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme, type Theme as ThemeType } from '@emotion/react';
+import theme from '../styles/theme';
 
 const bannerStyle = (theme: ThemeType) => css`
   background-color: ${theme.color.semantic.kakaoYellow};
   color: ${theme.color.semantic.kakaoBrown};
-  padding: 12px 16px;
-  border-radius: 8px;
+  padding: ${theme.spacing[3]} ${theme.spacing[4]};
+  border-radius: ${theme.spacing[2]};
   font-size: ${theme.typography.body2Regular.fontSize};
   font-weight: ${theme.typography.body2Regular.fontWeight};
   line-height: ${theme.typography.body2Regular.lineHeight};
@@ -14,7 +15,7 @@ const bannerStyle = (theme: ThemeType) => css`
 const highlight = css`
   display: block;
   font-weight: bold;
-  margin-top: 4px;
+  margin-top: ${theme.spacing[1]};
 `;
 
 const Banner = () => {
