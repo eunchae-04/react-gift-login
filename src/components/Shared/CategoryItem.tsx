@@ -13,24 +13,29 @@ const itemStyle = css`
   width: 100%;
   max-width: 104px;
   flex-shrink: 0;
-  text-align: center;
+
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+
   cursor: pointer;
 `;
 
 const imageStyle = css`
+  width: 50px;
+  height: 50px;
   border-radius: ${theme.spacing[3]};
   object-fit: cover;
-  margin-bottom: ${theme.spacing[2]};
+  margin-bottom: ${theme.spacing[1]};
 `;
 
 const nameStyle = (theme: ThemeType) => css`
   color: ${theme.color.gray.gray1000};
-  font-size: ${theme.typography.body2Regular.fontSize};
-  font-weight: ${theme.typography.body2Regular.fontWeight};
-  line-height: ${theme.typography.body2Regular.lineHeight};
+  font-size: ${theme.typography.label2Regular.fontSize};
+  font-weight: ${theme.typography.label2Regular.fontWeight};
+  line-height: ${theme.typography.label2Regular.lineHeight};
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
 `;
 
 const CategoryItem = ({ themeId, name, image, theme }: CategoryItemProps) => {

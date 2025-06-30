@@ -14,11 +14,11 @@ type Props = {
 };
 
 const sectionStyle = css`
-  padding: ${theme.spacing[4]};
+  padding: ${theme.spacing[6]};
 `;
 
 const titleStyle = (theme: ThemeType) => css`
-  margin-bottom: ${theme.spacing[3]};
+  margin-bottom: ${theme.spacing[4]};
   color: ${theme.color.semantic.textDefault};
   font-size: ${theme.typography.title1Bold.fontSize};
   font-weight: ${theme.typography.title1Bold.fontWeight};
@@ -28,8 +28,9 @@ const titleStyle = (theme: ThemeType) => css`
 const gridStyle = css`
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: ${theme.spacing[4]};
-  row-gap: ${theme.spacing[6]};
+  gap: 60px;
+  row-gap: ${theme.spacing[4]};
+  padding: 0 ${theme.spacing[4]};
 `;
 
 const CategorySection = ({ categories }: Props) => {

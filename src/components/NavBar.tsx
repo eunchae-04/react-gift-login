@@ -38,7 +38,7 @@ export default NavBar;
 
 const navStyle = css`
   max-width: 720px;
-  height: ${theme.spacing[14]};
+  height: ${theme.spacing[12]};
   margin: 0 auto;
   padding: 0 ${theme.spacing[4]};
   display: flex;
@@ -61,8 +61,8 @@ const iconButtonStyle = css`
 const titleButtonStyle = css`
   background: none;
   border: none;
-  font-size: ${theme.typography.title2Bold.fontSize};
-  font-weight: ${theme.typography.title2Bold.fontWeight};
+  font-size: ${theme.typography.title1Bold.fontSize};
+  font-weight: ${theme.typography.title1Bold.fontWeight};
   color: ${theme.color.gray.gray1000};
   cursor: pointer;
 `;
